@@ -1,6 +1,6 @@
 function CourseCard({ title, desc, icon }) {
 
-    const phoneNumber = "919XXXXXXXXX";
+    const phoneNumber = "918921342411";
 
     const message = `Hello, I am interested in the ${title} course. Please share more details.`;
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

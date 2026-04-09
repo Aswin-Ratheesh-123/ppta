@@ -2,7 +2,7 @@ import "../styles/Contact.css";
 
 function Contact() {
 
-  const phoneNumber = "919XXXXXXXXX";
+  const phoneNumber = "918921342411";
 
   const handleWhatsApp = (e) => {
     e.preventDefault();
