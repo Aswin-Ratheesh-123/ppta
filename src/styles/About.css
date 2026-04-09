@@ -1,0 +1,123 @@
+/* PAGE */
+.about {
+    padding: 90px 20px;
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+    color: #0f172a;
+}
+
+/* CONTAINER */
+.about-container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* TEXT */
+.about-text {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.about-text h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    color: #64748b;
+    margin-bottom: 12px;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* GRID */
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* CARD */
+.about-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* TOP ACCENT */
+.about-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #1e40af);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.about-card:hover::before {
+    opacity: 1;
+}
+
+/* HOVER */
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* ICON STYLE */
+.about-card h3::before {
+    display: block;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* TITLE */
+.about-card h3 {
+    margin-bottom: 10px;
+    color: #0f172a;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* TEXT */
+.about-card p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* OPTIONAL ICONS (you can customize) */
+.about-card:nth-child(1) h3::before {
+    content: "🎯";
+}
+.about-card:nth-child(2) h3::before {
+    content: "📚";
+}
+.about-card:nth-child(3) h3::before {
+    content: "💼";
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .about-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .about-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .about-text h2 {
+        font-size: 28px;
+    }
+}
