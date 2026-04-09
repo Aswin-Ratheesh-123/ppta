@@ -3,9 +3,15 @@ import { Link } from "react-router-dom";
 
 function Hero() {
 
-    const phoneNumber = "919XXXXXXXXX"; // 👉 replace with your number
+    const phoneNumber = "918921342411"; // 👉 replace with your number
 
-    // COURSES DATA
+    /* ✅ COMMON WHATSAPP FUNCTION */
+    const openWhatsApp = (text) => {
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+        window.open(url, "_blank");
+    };
+
+    /* COURSES DATA */
     const courses = [
         {
             title: "ACCA",
@@ -29,7 +35,7 @@ function Hero() {
         }
     ];
 
-    // SERVICES DATA
+    /* SERVICES DATA */
     const services = [
         {
             title: "Tax Services",
@@ -38,7 +44,7 @@ function Hero() {
         },
         {
             title: "Finance Consulting",
-            icon: "📊",
+            icon: "💼",
             desc: "Business financial planning, analysis, and investment strategies."
         },
         {
@@ -64,19 +70,22 @@ function Hero() {
                     </p>
 
                     <div className="hero-buttons">
+
                         <Link to="/courses">
-                            <button className="primary-btn">Explore Courses</button>
+                            <button className="primary-btn">
+                                Explore Courses
+                            </button>
                         </Link>
 
-                        <a
-                            href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-                                "Hello, I would like to know more about your services."
-                            )}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <button
+                            className="secondary-btn"
+                            onClick={() =>
+                                openWhatsApp("Hello, I would like to know more about your courses and services.")
+                            }
                         >
-                            <button className="secondary-btn">Contact Us</button>
-                        </a>
+                            💬 Contact Us
+                        </button>
+
                     </div>
 
                 </div>
@@ -92,26 +101,27 @@ function Hero() {
 
                 <div className="courses-container">
 
-                    {courses.map((course, index) => {
-                        const message = `Hello, I am interested in the ${course.title} course. Please share more details.`;
-                        const link = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                    {courses.map((course, index) => (
+                        <div className="course-card" key={index}>
 
-                        return (
-                            <div className="course-card" key={index}>
+                            <div className="course-icon">{course.icon}</div>
 
-                                {/* ICON */}
-                                <div className="course-icon">{course.icon}</div>
+                            <h3>{course.title}</h3>
+                            <p>{course.desc}</p>
 
-                                <h3>{course.title}</h3>
-                                <p>{course.desc}</p>
+                            <button
+                                className="course-btn"
+                                onClick={() =>
+                                    openWhatsApp(
+                                        `Hello, I am interested in the ${course.title} course. Please share more details.`
+                                    )
+                                }
+                            >
+                                💬 Know More
+                            </button>
 
-                                <a href={link} target="_blank" rel="noopener noreferrer">
-                                    <button className="course-btn">💬 Know More</button>
-                                </a>
-
-                            </div>
-                        );
-                    })}
+                        </div>
+                    ))}
 
                 </div>
 
@@ -133,26 +143,27 @@ function Hero() {
 
                 <div className="services-container">
 
-                    {services.map((service, index) => {
-                        const message = `Hello, I am interested in ${service.title}. Please provide more details.`;
-                        const link = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                    {services.map((service, index) => (
+                        <div className="service-card" key={index}>
 
-                        return (
-                            <div className="service-card" key={index}>
+                            <div className="service-icon">{service.icon}</div>
 
-                                {/* ICON */}
-                                <div className="service-icon">{service.icon}</div>
+                            <h3>{service.title}</h3>
+                            <p>{service.desc}</p>
 
-                                <h3>{service.title}</h3>
-                                <p>{service.desc}</p>
+                            <button
+                                className="service-btn"
+                                onClick={() =>
+                                    openWhatsApp(
+                                        `Hello, I am interested in ${service.title}. Please provide more details.`
+                                    )
+                                }
+                            >
+                                💬 Know More
+                            </button>
 
-                                <a href={link} target="_blank" rel="noopener noreferrer">
-                                    <button className="service-btn">💬 Know More</button>
-                                </a>
-
-                            </div>
-                        );
-                    })}
+                        </div>
+                    ))}
 
                 </div>
 

@@ -31,17 +31,17 @@ function About() {
                 <div className="about-cards">
 
                     <div className="about-card">
-                        <h3>🎯 Our Mission</h3>
+                        <h3>Our Mission</h3>
                         <p>Empowering careers through practical and professional education.</p>
                     </div>
 
                     <div className="about-card">
-                        <h3>🚀 Our Vision</h3>
+                        <h3>Our Vision</h3>
                         <p>To become a leading professional training and service provider.</p>
                     </div>
 
                     <div className="about-card">
-                        <h3>💼 Our Expertise</h3>
+                        <h3>Our Expertise</h3>
                         <p>Finance, Taxation, Accounting, and IT Services.</p>
                     </div>
 
